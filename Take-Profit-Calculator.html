@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Take Profit Calculator – Crypto Trading Tool</title>
+<meta name="description" content="Free Take Profit Calculator for crypto traders. Calculate target exit prices to optimize profits and manage risk effectively. Beginner-friendly and advanced trading tool.">
+<meta name="keywords" content="Crypto, Take Profit Calculator, Stop Loss, Risk Reward, Position Size, Trading Tool, Crypto Trading">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.example-block p { margin:8px 0; }
+
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/take-profit-calculator.html">Take Profit</a>
+    <a href="/stop-loss-calculator.html">Stop Loss</a>
+    <a href="/risk-reward-calculator.html">Risk Reward</a>
+    <a href="/position-size-calculator.html">Position Size</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Take Profit Calculator – Crypto Trading Tool</h1>
+
+<h2>What is this Take Profit Calculator?</h2>
+<p>This <strong>Take Profit Calculator</strong> helps crypto traders determine the target exit price for profitable trades. Combine it with <a href="/stop-loss-calculator.html">Stop Loss Calculator</a>, <a href="/risk-reward-calculator.html">Risk Reward Calculator</a>, and <a href="/position-size-calculator.html">Position Size Calculator</a> for complete trade planning.</p>
+
+<h2>How to Use This Calculator</h2>
+<label>Entry Price ($)</label>
+<input type="number" id="entry" placeholder="100">
+<label>Risk/Reward Ratio (R:R)</label>
+<input type="number" id="rr" placeholder="2">
+<label>Stop Loss Price ($)</label>
+<input type="number" id="stoploss" placeholder="90">
+<button onclick="calculateTakeProfit()">Calculate Take Profit</button>
+
+<div class="result" id="result"></div>
+
+<div class="example-block">
+<h2>Take Profit Calculator Example</h2>
+<p>If your entry price is $100, stop loss at $90, and R:R = 2, the take profit price = Entry + (Entry – Stop Loss) × R:R = 100 + (100–90)×2 = $120.</p>
+</div>
+
+<a href="https://affiliate.link/takeprofit" class="affiliate" target="_blank">Try Premium Take Profit Tool</a>
+
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+
+<h3>1. What is a take profit?</h3>
+<p>Take profit is the price at which you exit a trade to lock in gains.</p>
+
+<h3>2. How do I calculate it?</h3>
+<p>Input entry, stop loss, and risk/reward ratio, then calculate.</p>
+
+<h3>3. Can I use with stop loss?</h3>
+<p>Yes, <a href="/stop-loss-calculator.html">Stop Loss Calculator</a> defines your risk first.</p>
+
+<h3>4. How do I choose R:R?</h3>
+<p>Common ratios are 2:1 or 3:1 depending on strategy.</p>
+
+<h3>5. Can I combine with Risk Reward?</h3>
+<p>Yes, <a href="/risk-reward-calculator.html">Risk Reward Calculator</a> helps analyze trade.</p>
+
+<h3>6. Suitable for all crypto assets?</h3>
+<p>Yes, adjust entry and stop loss based on asset volatility.</p>
+
+<h3>7. Beginner friendly?</h3>
+<p>Yes, helps plan exits safely.</p>
+
+<h3>8. Does it include fees?</h3>
+<p>No, fees are not included.</p>
+
+<h3>9. Can it prevent losses?</h3>
+<p>Indirectly, by planning exits and limiting emotional decisions.</p>
+
+<h3>10. Why use this tool?</h3>
+<p>Optimizes profit-taking and combines with risk management for effective trading.</p>
+
+</div>
+
+</div>
+
+<script>
+function calculateTakeProfit(){
+  let entry=parseFloat(document.getElementById('entry').value);
+  let stoploss=parseFloat(document.getElementById('stoploss').value);
+  let rr=parseFloat(document.getElementById('rr').value);
+  if(isNaN(entry)||isNaN(stoploss)||isNaN(rr)||rr<=0){
+    alert('Please enter valid numbers'); return;
+  }
+  let takeprofit = entry + (entry - stoploss) * rr;
+  document.getElementById('result').innerText='Take Profit Price: $'+takeprofit.toFixed(2);
+}
+</script>
+
+<footer>
+© 2026 Crypto Trading Tools · <a href="/" >Back to Home</a>
+</footer>
+
+</body>
+</html>

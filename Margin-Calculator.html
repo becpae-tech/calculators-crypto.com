@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Margin Calculator – Crypto Trading Position & Risk Tool</title>
+<meta name="description" content="Free Margin Calculator for crypto traders. Calculate required margin for trades and manage account risk effectively. Beginner-friendly crypto trading tool.">
+<meta name="keywords" content="Crypto, Margin Calculator, Position Size, Stop Loss, Leverage, Risk Reward, Trading Tool">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/margin-calculator.html">Margin</a>
+    <a href="/position-size-calculator.html">Position Size</a>
+    <a href="/stop-loss-calculator.html">Stop Loss</a>
+    <a href="/take-profit-calculator.html">Take Profit</a>
+  </nav>
+</header>
+
+<div class="container">
+<h1>Margin Calculator – Crypto Trading Position & Risk Tool</h1>
+
+<h2>What is this Margin Calculator?</h2>
+<p>This <strong>Margin Calculator</strong> helps crypto traders calculate required margin for positions. Combine with <a href="/position-size-calculator.html">Position Size Calculator</a>, <a href="/stop-loss-calculator.html">Stop Loss Calculator</a>, and <a href="/take-profit-calculator.html">Take Profit Calculator</a> for complete risk management.</p>
+
+<h2>How to Use This Calculator</h2>
+<label>Position Size ($)</label>
+<input type="number" id="position" placeholder="1000">
+<label>Leverage (x)</label>
+<input type="number" id="leverage" placeholder="5">
+<button onclick="calculateMargin()">Calculate Required Margin</button>
+<div class="result" id="result"></div>
+
+<div class="example-block">
+<h2>Example</h2>
+<p>If your position size is $1000 and leverage is 5x, required margin = Position ÷ Leverage = $1000 ÷ 5 = $200.</p>
+</div>
+
+<a href="https://affiliate.link/margin" class="affiliate" target="_blank">Try Premium Margin Tool</a>
+
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+<h3>1. What is margin?</h3>
+<p>Margin is the amount of capital required to open a leveraged position.</p>
+<h3>2. How do I calculate it?</h3>
+<p>Input position size and leverage. Click calculate.</p>
+<h3>3. Recommended leverage?</h3>
+<p>Beginners should use low leverage to reduce risk.</p>
+<h3>4. Can I combine with Stop Loss?</h3>
+<p>Yes, <a href="/stop-loss-calculator.html">Stop Loss Calculator</a> limits potential losses.</p>
+<h3>5. Can I combine with Position Size?</h3>
+<p>Yes, <a href="/position-size-calculator.html">Position Size Calculator</a> helps sizing positions.</p>
+<h3>6. Is it suitable for all crypto assets?</h3>
+<p>Yes, adjust for volatility.</p>
+<h3>7. Does it include fees?</h3>
+<p>No, fees are not included.</p>
+<h3>8. Beginner friendly?</h3>
+<p>Yes, easy to use for beginners.</p>
+<h3>9. Can I use it for futures?</h3>
+<p>Yes, for all leveraged trading.</p>
+<h3>10. Why use it?</h3>
+<p>Helps manage risk and avoid liquidation.</p>
+</div>
+</div>
+
+<script>
+function calculateMargin(){
+let position=parseFloat(document.getElementById('position').value);
+let leverage=parseFloat(document.getElementById('leverage').value);
+if(isNaN(position)||isNaN(leverage)||leverage<=0){ alert('Enter valid numbers'); return; }
+let margin=position/leverage;
+document.getElementById('result').innerText='Required Margin: $'+margin.toFixed(2);
+}
+</script>
+
+<footer>
+© 2026 Crypto Trading Tools · <a href="/" >Back to Home</a>
+</footer>
+
+</body>
+</html>

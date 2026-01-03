@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Trading Fee Calculator – Crypto Trading Tool</title>
+<meta name="description" content="Free Trading Fee Calculator for crypto traders. Calculate exchange fees for trades to manage costs and optimize profits. Beginner-friendly crypto tool.">
+<meta name="keywords" content="Crypto, Trading Fee Calculator, Fees, ROI, Stop Loss, Position Size, Crypto Trading Tool">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/fees-calculator.html">Fees</a>
+    <a href="/roi-calculator.html">ROI</a>
+    <a href="/stop-loss-calculator.html">Stop Loss</a>
+    <a href="/position-size-calculator.html">Position Size</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Trading Fee Calculator – Crypto Trading Tool</h1>
+
+<h2>What is this Trading Fee Calculator?</h2>
+<p>This <strong>Trading Fee Calculator</strong> helps crypto traders estimate exchange fees for trades. Combine with <a href="/roi-calculator.html">ROI Calculator</a>, <a href="/stop-loss-calculator.html">Stop Loss Calculator</a>, and <a href="/position-size-calculator.html">Position Size Calculator</a> for complete trade cost analysis.</p>
+
+<h2>How to Use This Calculator</h2>
+<label>Trade Amount ($)</label>
+<input type="number" id="tradeAmount" placeholder="1000">
+<label>Maker Fee (%)</label>
+<input type="number" id="makerFee" placeholder="0.1">
+<label>Taker Fee (%)</label>
+<input type="number" id="takerFee" placeholder="0.2">
+<button onclick="calculateFees()">Calculate Fees</button>
+
+<div class="result" id="result"></div>
+
+<div class="example-block">
+<h2>Trading Fee Example</h2>
+<p>If trade amount = $1000, maker fee = 0.1%, taker fee = 0.2%:</p>
+<p>Maker Fee = 1000 × 0.1% = $1</p>
+<p>Taker Fee = 1000 × 0.2% = $2</p>
+<p>Total Fees = $3</p>
+</div>
+
+<a href="https://affiliate.link/fees" class="affiliate" target="_blank">Try Premium Fee Tool</a>
+
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+
+<h3>1. What are trading fees?</h3>
+<p>Fees charged by exchanges per trade, including maker and taker fees.</p>
+
+<h3>2. How do I calculate them?</h3>
+<p>Input trade amount and fee percentages, then calculate.</p>
+
+<h3>3. Can I combine with ROI?</h3>
+<p>Yes, <a href="/roi-calculator.html">ROI Calculator</a> adjusts profits after fees.</p>
+
+<h3>4. Can I combine with Stop Loss?</h3>
+<p>Yes, <a href="/stop-loss-calculator.html">Stop Loss Calculator</a> sets exit points for risk management.</p>
+
+<h3>5. Suitable for all exchanges?</h3>
+<p>Yes, input correct fee percentages for your exchange.</p>
+
+<h3>6. Beginner friendly?</h3>
+<p>Yes, easy to calculate trading costs.</p>
+
+<h3>7. Can I calculate in different currencies?</h3>
+<p>Yes, enter trade amount in USD or your preferred currency.</p>
+
+<h3>8. How to reduce fees?</h3>
+<p>Use maker orders, exchange discounts, or lower trading frequency.</p>
+
+<h3>9. Why track fees?</h3>
+<p>Fees impact net profit; knowing them helps optimize trades.</p>
+
+<h3>10. Recommended workflow?</h3>
+<p>Plan trades with Position Size, Stop Loss, Take Profit, Fees, and ROI to optimize returns.</p>
+
+</div>
+
+</div>
+
+<script>
+function calculateFees(){
+  let amount=parseFloat(document.getElementById('tradeAmount').value);
+  let maker=parseFloat(document.getElementById('makerFee').value);
+  let taker=parseFloat(document.getElementById('takerFee').value);
+  if(isNaN(amount)||isNaN(maker)||isNaN(taker)){ alert('Please enter valid numbers'); return; }
+  let makerFee = amount * maker / 100;
+  let takerFee = amount * taker / 100;
+  let total = makerFee + takerFee;
+  document.getElementById('result').innerText='Maker Fee: $'+makerFee.toFixed(2)+' | Taker Fee: $'+takerFee.toFixed(2)+' | Total Fees: $'+total.toFixed(2);
+}
+</script>
+
+<footer>
+© 2026 Crypto Trading Tools · <a href="/" >Back to Home</a>
+</footer>
+
+</body>
+</html>
