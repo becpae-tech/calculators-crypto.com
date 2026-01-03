@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crypto Trading Tools FAQ & How-To Guide – Stop Loss, ROI, Leverage & More</title>
+<meta name="description" content="Comprehensive guide to 10 crypto trading calculators including Stop Loss, Position Size, Leverage, Liquidation, ROI, Fees, and Funding Rate. Learn usage, examples, and FAQs.">
+<meta name="keywords" content="crypto trading calculators, stop loss, ROI, leverage, liquidation, position size, fees, funding rate, risk reward, crypto trading FAQ">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; margin:0; background:#f6f8fb; color:#222; scroll-behavior:smooth;}
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+
+.container { display:flex; max-width:1200px; margin:auto; padding:32px; gap:24px; }
+.sidebar { width:250px; position:sticky; top:20px; background:#fff; padding:16px; border-radius:6px; border:1px solid #e5e7eb; height:max-content; }
+.sidebar h3 { margin-top:0; margin-bottom:16px; font-size:18px; }
+.sidebar a { display:block; padding:8px 12px; text-decoration:none; color:#2563eb; border-radius:4px; margin-bottom:4px; transition:0.2s; }
+.sidebar a.active, .sidebar a:hover { background:#e5e7eb; font-weight:bold; }
+
+.content { flex:1; background:#fff; padding:24px; border-radius:6px; border:1px solid #e5e7eb; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+h3 { font-size:20px; margin-top:24px; margin-bottom:12px; }
+p { line-height:1.6; margin-bottom:12px; }
+ul { margin-left:20px; }
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+
+@media screen and (max-width:900px){ 
+  .container { flex-direction:column; } 
+  .sidebar{ width:100%; position:relative; top:auto; margin-bottom:16px; } 
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="./" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="./">Home</a>
+    <a href="./stop-loss-calculator.html">Stop Loss</a>
+    <a href="./position-size-calculator.html">Position Size</a>
+    <a href="./risk-reward-calculator.html">Risk Reward</a>
+    <a href="./leverage-calculator.html">Leverage</a>
+    <a href="./liquidation-calculator.html">Liquidation</a>
+    <a href="./take-profit-calculator.html">Take Profit</a>
+    <a href="./roi-calculator.html">ROI</a>
+    <a href="./fees-calculator.html">Fees</a>
+    <a href="./funding-rate-calculator.html">Funding Rate</a>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- 左侧目录 -->
+  <div class="sidebar">
+    <h3>Tools & FAQ</h3>
+    <a href="#stop-loss">Stop Loss Calculator</a>
+    <a href="#position-size">Position Size Calculator</a>
+    <a href="#risk-reward">Risk Reward Calculator</a>
+    <a href="#leverage">Leverage Calculator</a>
+    <a href="#liquidation">Liquidation Calculator</a>
+    <a href="#take-profit">Take Profit Calculator</a>
+    <a href="#roi">ROI Calculator</a>
+    <a href="#fees">Trading Fee Calculator</a>
+    <a href="#funding-rate">Funding Rate Calculator</a>
+    <a href="#risk-management">Risk Management Overview</a>
+  </div>
+
+  <!-- 右侧内容 -->
+  <div class="content">
+    <h1>Crypto Trading Tools – Usage, Examples & FAQ</h1>
+
+    <div id="stop-loss">
+      <h2>Stop Loss Calculator</h2>
+      <p>Calculate stop loss levels to protect trades from excessive losses. Input entry price, stop price, and position size.</p>
+      <ul>
+        <li>Use Case: Set automatic sell levels for risk management.</li>
+        <li>FAQ: How much should I set my stop loss? Depends on your risk tolerance and market volatility.</li>
+        <li><a href="./stop-loss-calculator.html">Open Stop Loss Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="position-size">
+      <h2>Position Size Calculator</h2>
+      <p>Determine the optimal position size based on account balance, risk percentage, and stop loss distance.</p>
+      <ul>
+        <li>Use Case: Manage risk by calculating exact trade size.</li>
+        <li>FAQ: Can I use this for leverage? Yes, it works with leveraged positions.</li>
+        <li><a href="./position-size-calculator.html">Open Position Size Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="risk-reward">
+      <h2>Risk Reward Calculator</h2>
+      <p>Evaluate potential risk vs reward before entering a trade. Input entry, target, and stop loss levels.</p>
+      <ul>
+        <li>Use Case: Plan trades with favorable risk/reward ratios.</li>
+        <li>FAQ: What is a good ratio? Many traders aim for at least 1:2 or higher.</li>
+        <li><a href="./risk-reward-calculator.html">Open Risk Reward Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="leverage">
+      <h2>Leverage Calculator</h2>
+      <p>Calculate effective leverage for futures trading and potential liquidation risks.</p>
+      <ul>
+        <li>Use Case: Determine safe leverage levels for your account size.</li>
+        <li>FAQ: How does leverage affect risk? Higher leverage increases both potential profit and loss.</li>
+        <li><a href="./leverage-calculator.html">Open Leverage Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="liquidation">
+      <h2>Liquidation Calculator</h2>
+      <p>Estimate liquidation price for leveraged positions to avoid being liquidated.</p>
+      <ul>
+        <li>Use Case: Protect your account by knowing liquidation levels.</li>
+        <li>FAQ: Can funding rates affect liquidation? Yes, they can slightly shift effective liquidation price.</li>
+        <li><a href="./liquidation-calculator.html">Open Liquidation Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="take-profit">
+      <h2>Take Profit Calculator</h2>
+      <p>Set target exit prices to lock in profits. Input entry price, target ROI, and position size.</p>
+      <ul>
+        <li>Use Case: Automatically calculate realistic take profit levels.</li>
+        <li>FAQ: Should I scale out or exit all? Depends on your trading strategy.</li>
+        <li><a href="./take-profit-calculator.html">Open Take Profit Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="roi">
+      <h2>ROI Calculator</h2>
+      <p>Calculate Return on Investment for each trade to track profitability.</p>
+      <ul>
+        <li>Use Case: Analyze potential gains before opening trades.</li>
+        <li>FAQ: Can ROI include fees? Yes, combine with Fees Calculator.</li>
+        <li><a href="./roi-calculator.html">Open ROI Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="fees">
+      <h2>Trading Fee Calculator</h2>
+      <p>Calculate exchange fees including maker and taker fees for each trade.</p>
+      <ul>
+        <li>Use Case: Track costs and optimize trading profitability.</li>
+        <li>FAQ: Can I calculate for multiple trades? Yes, sum fees per trade.</li>
+        <li><a href="./fees-calculator.html">Open Fees Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="funding-rate">
+      <h2>Funding Rate Calculator</h2>
+      <p>Estimate periodic funding payments for perpetual futures positions.</p>
+      <ul>
+        <li>Use Case: Manage costs in futures trading and avoid surprises.</li>
+        <li>FAQ: How often is funding charged? Typically every 8 hours, depends on exchange.</li>
+        <li><a href="./funding-rate-calculator.html">Open Funding Rate Calculator</a></li>
+      </ul>
+    </div>
+
+    <div id="risk-management">
+      <h2>Risk Management Overview</h2>
+      <p>Learn how to combine all tools for proper crypto trading risk management.</p>
+      <ul>
+        <li>Use Case: Plan trades with stop loss, position size, leverage, ROI, and fees together.</li>
+        <li>FAQ: Can I automate this? Some tools integrate with trading platforms or scripts.</li>
+        <li><a href="./">Go to Homepage</a></li>
+      </ul>
+    </div>
+
+    <a href="https://affiliate.link/all-tools" class="affiliate" target="_blank">Explore All Premium Crypto Trading Tools</a>
+  </div>
+</div>
+
+<footer>
+© 2026 Crypto Trading Tools · <a href="./" >Back to Home</a>
+</footer>
+
+<script>
+// 高亮左侧目录
+const sections = document.querySelectorAll('.content h2');
+const navLinks = document.querySelectorAll('.sidebar a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    const sectionTop = sec.offsetTop - 80;
+    if (pageYOffset >= sectionTop) {
+      current = sec.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

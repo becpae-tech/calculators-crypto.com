@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Liquidation Calculator – Crypto Margin Trading Tool</title>
+<meta name="description" content="Free Liquidation Calculator for crypto margin traders. Calculate your liquidation price and manage leveraged positions safely. Beginner-friendly and advanced tool for crypto trading.">
+<meta name="keywords" content="Crypto, Liquidation Calculator, Margin Trading, Leverage, Stop Loss, Risk Reward, Position Size, Trading Tool">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.example-block p { margin:8px 0; }
+
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+.faq-block p { margin:8px 0; }
+
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="./" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="./">Home</a>
+    <a href="./stop-loss-calculator.html">Stop Loss</a>
+    <a href="./position-size-calculator.html">Position Size</a>
+    <a href="./risk-reward-calculator.html">Risk Reward</a>
+    <a href="./leverage-calculator.html">Leverage</a>
+    <a href="./liquidation-calculator.html">Liquidation</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Liquidation Calculator – Crypto Margin Trading Tool</h1>
+
+<h2>What is this Liquidation Calculator?</h2>
+<p>This <strong>crypto liquidation calculator</strong> helps margin traders determine the liquidation price for leveraged positions. Avoid unexpected losses by combining this tool with the <a href="./stop-loss-calculator.html">Stop Loss Calculator</a>, <a href="./leverage-calculator.html">Leverage Calculator</a>, and <a href="./risk-reward-calculator.html">Risk Reward Calculator</a>.</p>
+
+<h2>How to Use This Calculator</h2>
+<p>Enter your <strong>entry price</strong>, <strong>leverage</strong>, and <strong>margin type</strong>. Click "Calculate" to get the estimated liquidation price. Use it to protect your account from forced liquidation.</p>
+
+<label>Entry Price ($)</label>
+<input type="number" id="entry" placeholder="100">
+<label>Leverage (x)</label>
+<input type="number" id="leverage" placeholder="5">
+<label>Account Equity ($)</label>
+<input type="number" id="equity" placeholder="500">
+<button onclick="calculateLiquidation()">Calculate Liquidation Price</button>
+
+<div class="result" id="result"></div>
+
+<div class="example-block">
+<h2>Liquidation Calculator Example</h2>
+<p>If your <strong>entry price</strong> is $100, <strong>leverage</strong> is 5x, and your <strong>account equity</strong> is $500, the estimated liquidation price is:</p>
+<p><strong>Liquidation Price = Entry × (1 – Equity ÷ (Position × Leverage))</strong></p>
+<p>Example: $100 × (1 – 500 ÷ (100 × 5)) = $0 (simplified example)</p>
+<p>This shows how leverage can magnify risk and why monitoring liquidation levels is essential.</p>
+</div>
+
+<a href="https://affiliate.link/liquidation" class="affiliate" target="_blank">Try Premium Liquidation Tool</a>
+
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+
+<h3>1. What is liquidation?</h3>
+<p>Liquidation occurs when a leveraged position loses enough value that the exchange automatically closes it to prevent further losses.</p>
+
+<h3>2. How do I use this calculator?</h3>
+<p>Enter entry price, leverage, and account equity to calculate estimated liquidation price.</p>
+
+<h3>3. Why is risk management important for margin trading?</h3>
+<p>Leverage increases both potential profits and losses. Monitoring liquidation helps prevent account wipeouts.</p>
+
+<h3>4. Can I use stop loss with liquidation?</h3>
+<p>Yes, use the <a href="./stop-loss-calculator.html">Stop Loss Calculator</a> to limit losses before reaching liquidation.</p>
+
+<h3>5. How does leverage affect liquidation?</h3>
+<p>Higher leverage lowers the liquidation threshold. Even small price movements can trigger liquidation.</p>
+
+<h3>6. Can I combine with risk/reward analysis?</h3>
+<p>Yes, use <a href="./risk-reward-calculator.html">Risk Reward Calculator</a> to evaluate trades while considering liquidation risk.</p>
+
+<h3>7. Is this suitable for all crypto assets?</h3>
+<p>Yes, adjust inputs based on asset volatility and exchange margin requirements.</p>
+
+<h3>8. Recommended leverage for beginners?</h3>
+<p>Use low leverage (2x–5x) to minimize liquidation risk.</p>
+
+<h3>9. Does this include fees?</h3>
+<p>No, fees are not included. Consider them separately when planning trades.</p>
+
+<h3>10. How to prevent liquidation?</h3>
+<p>Use appropriate stop losses, monitor margin, and avoid excessive leverage. This calculator helps estimate safe levels.</p>
+
+</div>
+
+</div>
+
+<script>
+function calculateLiquidation(){
+  let entry = parseFloat(document.getElementById('entry').value);
+  let leverage = parseFloat(document.getElementById('leverage').value);
+  let equity = parseFloat(document.getElementById('equity').value);
+  if(isNaN(entry)||isNaN(leverage)||isNaN(equity)||leverage<=0){
+    alert('Please enter valid numbers'); return;
+  }
+  // 简化计算示例
+  let liquidation = entry * (1 - equity / (entry * leverage));
+  document.getElementById('result').innerText = 'Estimated Liquidation Price: $' + liquidation.toFixed(2);
+}
+</script>
+
+<footer>
+© 2026 Crypto Trading Tools · <a href="./" >Back to Home</a>
+</footer>
+
+</body>
+</html>

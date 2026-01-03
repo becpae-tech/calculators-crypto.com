@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Leverage Calculator – Crypto Trading Risk Tool</title>
+<meta name="description" content="Free Leverage Calculator for crypto traders. Calculate effective risk when trading with leverage to manage positions safely. Suitable for beginners and advanced traders.">
+<meta name="keywords" content="Crypto, Cryptocurrency, Leverage Calculator, Trading Tool, Risk Management, Stop Loss, Position Size, Risk Reward">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.example-block p { margin:8px 0; }
+
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+.faq-block p { margin:8px 0; }
+
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<!-- 顶部首页菜单 -->
+<header>
+  <a href="./" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="./">Home</a>
+    <a href="./stop-loss-calculator.html">Stop Loss</a>
+    <a href="./position-size-calculator.html">Position Size</a>
+    <a href="./risk-reward-calculator.html">Risk Reward</a>
+    <a href="./leverage-calculator.html">Leverage</a>
+    <a href="./faq.html">FAQ</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Leverage Calculator – Crypto Trading Risk Tool</h1>
+
+<h2>What is this Leverage Calculator?</h2>
+<p>This <strong>crypto leverage calculator</strong> helps traders understand effective risk when trading with leverage. Using leverage can amplify profits but also increases risk. Combine this tool with the <a href="./stop-loss-calculator.html" title="Stop Loss Calculator">Stop Loss Calculator</a>, <a href="./position-size-calculator.html" title="Position Size Calculator">Position Size Calculator</a>, and <a href="./risk-reward-calculator.html" title="Risk Reward Calculator">Risk Reward Calculator</a> for full risk management.</p>
+
+<h2>How to Use This Calculator</h2>
+<p>Enter your <strong>account size</strong>, <strong>position size</strong>, and <strong>leverage</strong>. Click "Calculate" to see the effective risk amount. This ensures your leveraged trades do not exceed your risk tolerance.</p>
+
+<!-- 计算输入框 -->
+<label>Account Size ($)</label>
+<input type="number" id="account" placeholder="1000">
+<label>Position Size ($)</label>
+<input type="number" id="position" placeholder="200">
+<label>Leverage (x)</label>
+<input type="number" id="leverage" placeholder="5">
+<button onclick="calculateLeverage()">Calculate Effective Risk</button>
+
+<div class="result" id="result"></div>
+
+<!-- 示例说明 -->
+<div class="example-block">
+<h2>Leverage Calculator Example</h2>
+<p>If your <strong>account size</strong> is $1,000, <strong>position size</strong> is $200, and you use <strong>5x leverage</strong>:</p>
+<p><strong>Effective Risk = Position Size × Leverage = $200 × 5 = $1000</strong></p>
+<p>This means your trade exposes $1,000 worth of capital while your actual investment is $200, highlighting the increased risk with leverage.</p>
+</div>
+
+<a href="https://affiliate.link/leverage" class="affiliate" target="_blank">Try Premium Leverage Tool</a>
+
+<!-- FAQ 扩展到 10 条 -->
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+
+<h3>1. What is leverage?</h3>
+<p>Leverage allows traders to control a larger position with a smaller investment. It amplifies both potential profit and risk.</p>
+
+<h3>2. How do I use this calculator?</h3>
+<p>Input account size, position size, and leverage. Click "Calculate" to see effective risk exposure.</p>
+
+<h3>3. Why is risk management important with leverage?</h3>
+<p>Leverage magnifies losses as well as gains. Understanding effective risk is essential to avoid liquidation.</p>
+
+<h3>4. Recommended leverage?</h3>
+<p>Depends on your experience and market volatility. Beginners should use low leverage (2x–5x) to reduce risk.</p>
+
+<h3>5. Can I combine with stop loss?</h3>
+<p>Yes, always set stop loss levels using the <a href="./stop-loss-calculator.html">Stop Loss Calculator</a> to limit potential losses.</p>
+
+<h3>6. How does position size affect leverage?</h3>
+<p>Larger positions with high leverage increase effective risk. Use the <a href="./position-size-calculator.html">Position Size Calculator</a> for optimal sizing.</p>
+
+<h3>7. Can I assess risk/reward with leverage?</h3>
+<p>Yes, use the <a href="./risk-reward-calculator.html">Risk Reward Calculator</a> to evaluate trades while considering leverage.</p>
+
+<h3>8. Does this include trading fees?</h3>
+<p>No, fees are not included. Consider them separately for accurate risk assessment.</p>
+
+<h3>9. Is this suitable for all crypto assets?</h3>
+<p>Yes, adjust position size and leverage based on asset volatility and liquidity.</p>
+
+<h3>10. Can beginners use this tool safely?</h3>
+<p>Yes, but always practice on demo accounts first and start with low leverage to control risk.</p>
+
+</div>
+
+</div>
+
+<!-- JS 计算逻辑 -->
+<script>
+function calculateLeverage(){
+  let account = parseFloat(document.getElementById('account').value);
+  let position = parseFloat(document.getElementById('position').value);
+  let leverage = parseFloat(document.getElementById('leverage').value);
+  if(isNaN(account)||isNaN(position)||isNaN(leverage)||leverage<=0){ 
+    alert('Please enter valid numbers'); 
+    return;
+  }
+  let effectiveRisk = position * leverage;
+  document.getElementById('result').innerText = 'Effective Risk Exposure: $' + effectiveRisk.toFixed(2);
+}
+</script>
+
+<!-- 底部 -->
+<footer>
+© 2026 Crypto Trading Tools · <a href="./" >Back to Home</a>
+</footer>
+
+</body>
+</html>

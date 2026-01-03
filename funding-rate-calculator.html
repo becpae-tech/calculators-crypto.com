@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Funding Rate Calculator – Crypto Futures Tool</title>
+<meta name="description" content="Free Funding Rate Calculator for crypto traders. Calculate periodic funding fees for perpetual futures to manage costs and optimize trading strategy.">
+<meta name="keywords" content="Crypto, Funding Rate Calculator, Futures, Fees, ROI, Position Size, Crypto Trading Tool">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="./" class="logo">Crypto Tools</a>
+  <nav>
+    <a href="./">Home</a>
+    <a href="./funding-rate-calculator.html">Funding Rate</a>
+    <a href="./fees-calculator.html">Fees</a>
+    <a href="./roi-calculator.html">ROI</a>
+    <a href="./position-size-calculator.html">Position Size</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Funding Rate Calculator – Crypto Futures Tool</h1>
+
+<h2>What is this Funding Rate Calculator?</h2>
+<p>This <strong>Funding Rate Calculator</strong> helps crypto futures traders calculate periodic funding payments for perpetual contracts. Combine it with <a href="./fees-calculator.html">Trading Fee Calculator</a>, <a href="./roi-calculator.html">ROI Calculator</a>, and <a href="./position-size-calculator.html">Position Size Calculator</a> for complete cost and profit management.</p>
+
+<h2>How to Use This Calculator</h2>
+<label>Position Size ($)</label>
+<input type="number" id="position" placeholder="1000">
+<label>Funding Rate (%)</label>
+<input type="number" id="fundingRate" placeholder="0.01">
+<label>Funding Interval (hours)</label>
+<input type="number" id="interval" placeholder="8">
+<button onclick="calculateFunding()">Calculate Funding</button>
+
+<div class="result" id="result"></div>
+
+<div class="example-block">
+<h2>Funding Rate Example</h2>
+<p>For position size $1000, funding rate 0.01%, interval 8 hours:</p>
+<p>Funding Payment = 1000 × 0.01% = $0.10 per interval</p>
+<p>This repeats each funding interval for perpetual futures.</p>
+</div>
+
+<a href="https://affiliate.link/funding" class="affiliate" target="_blank">Try Premium Funding Tool</a>
+
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+
+<h3>1. What is funding rate?</h3>
+<p>Funding rate is a periodic payment between longs and shorts in perpetual futures to maintain price alignment with spot.</p>
+
+<h3>2. How do I calculate it?</h3>
+<p>Funding Payment = Position Size × Funding Rate (%) per interval.</p>
+
+<h3>3. Can I combine with Fees?</h3>
+<p>Yes, <a href="./fees-calculator.html">Trading Fee Calculator</a> adds trading costs to total expenses.</p>
+
+<h3>4. Can I combine with ROI?</h3>
+<p>Yes, <a href="./roi-calculator.html">ROI Calculator</a> calculates net profit after funding payments.</p>
+
+<h3>5. Can I combine with Position Size?</h3>
+<p>Yes, <a href="./position-size-calculator.html">Position Size Calculator</a> helps size positions before calculating funding.</p>
+
+<h3>6. Suitable for all crypto futures?</h3>
+<p>Yes, adjust funding rate and interval per exchange.</p>
+
+<h3>7. Beginner friendly?</h3>
+<p>Yes, simple input to estimate funding costs.</p>
+
+<h3>8. How often is funding charged?</h3>
+<p>Depends on the exchange, commonly every 8 hours.</p>
+
+<h3>9. Can it prevent losses?</h3>
+<p>Indirectly, by planning funding costs into your strategy.</p>
+
+<h3>10. Why use this tool?</h3>
+<p>To manage costs, avoid surprises, and optimize futures trading profitability.</p>
+
+</div>
+
+</div>
+
+<script>
+function calculateFunding(){
+  let position=parseFloat(document.getElementById('position').value);
+  let rate=parseFloat(document.getElementById('fundingRate').value);
+  let interval=parseFloat(document.getElementById('interval').value);
+  if(isNaN(position)||isNaN(rate)||isNaN(interval)||rate<0||interval<=0){ alert('Please enter valid numbers'); return; }
+  let funding = position * rate / 100;
+  document.getElementById('result').innerText='Funding Payment per interval: $'+funding.toFixed(4);
+}
+</script>
+
+<footer>
+© 2026 Crypto Trading Tools · <a href="./" >Back to Home</a>
+</footer>
+
+</body>
+</html>

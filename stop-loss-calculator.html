@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stop Loss Calculator – Crypto Trading Risk Control Tool</title>
+<meta name="description" content="Free Stop Loss Calculator for crypto traders. Determine optimal stop loss levels to limit losses and manage risk. Ideal for beginners and experienced traders.">
+<meta name="keywords" content="Crypto, Cryptocurrency, Stop Loss Calculator, Trading Tool, Risk Management, Position Size, Risk Reward, Leverage">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; color:#222; }
+header { display:flex; justify-content:center; align-items:center; padding:16px 24px; background:#2563eb; color:#fff; gap:40px; }
+header .logo { font-size:20px; font-weight:bold; color:#fff; text-decoration:none; }
+header nav a { color:#fff; text-decoration:none; margin:0 12px; font-size:14px; padding:6px 12px; border-radius:4px; }
+header nav a:hover { background:#1e40af; }
+@media screen and (max-width:768px){ header{ flex-direction:column; gap:12px; } header nav a{ margin:4px; } }
+
+.container { max-width:900px; margin:auto; background:#fff; padding:32px; }
+h1 { font-size:32px; margin-bottom:16px; }
+h2 { font-size:24px; margin-top:32px; margin-bottom:16px; }
+p { line-height:1.6; margin-bottom:12px; }
+input, button { padding:10px; margin:6px 0; width:100%; font-size:16px; border-radius:4px; border:1px solid #ccc; }
+button { background:#2563eb; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#1e40af; }
+.result { margin-top:16px; font-weight:bold; font-size:16px; }
+
+.example-block { background:#eef2f7; padding:16px; border-radius:6px; margin-top:20px; }
+.example-block p { margin:8px 0; }
+
+.affiliate { display:inline-block; margin-top:12px; padding:10px 16px; background:#f97316; color:#fff; text-decoration:none; border-radius:4px; font-size:16px; }
+.affiliate:hover { background:#c2410c; }
+
+.faq-block { margin-top:40px; background:#f9fafb; padding:24px; border-radius:8px; }
+.faq-block h3 { margin-top:20px; font-size:20px; color:#0a2540; }
+.faq-block p { margin:8px 0; }
+
+footer { margin-top:50px; text-align:center; font-size:14px; color:#666; padding:20px 0; background:#f3f4f6; }
+footer a { color:#2563eb; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<!-- 顶部首页菜单 -->
+<header>
+  <a href="./" class="logo">Stop Loss Calculator</a>
+  <nav>
+    <a href="./">Home</a>
+    <a href="./stop-loss-calculator.html">Stop Loss</a>
+    <a href="./position-size-calculator.html">Position Size</a>
+    <a href="./risk-reward-calculator.html">Risk Reward</a>
+    <a href="./leverage-calculator.html">Leverage</a>
+    <a href="./faq.html">FAQ</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>Stop Loss Calculator – Crypto Trading Risk Control Tool</h1>
+
+<h2>What is this Stop Loss Calculator?</h2>
+<p>This <strong>crypto stop loss calculator</strong> helps traders determine the optimal stop loss level for each trade. Proper stop loss placement limits potential losses and protects your trading account. Using this with other tools like the <a href="./position-size-calculator.html" title="Position Size Calculator">Position Size Calculator</a> and <a href="./risk-reward-calculator.html" title="Risk Reward Calculator">Risk Reward Calculator</a> ensures comprehensive risk management.</p>
+
+<h2>How to Use This Calculator</h2>
+<p>Enter your <strong>entry price</strong> and the <strong>amount you are willing to risk per trade</strong>. Click "Calculate" to get the suggested stop loss price. This tool helps control risk and plan trades systematically.</p>
+
+<!-- 计算输入框 -->
+<label>Entry Price ($)</label>
+<input type="number" id="entry" placeholder="100">
+<label>Risk Amount ($)</label>
+<input type="number" id="riskamount" placeholder="20">
+<button onclick="calculateStopLoss()">Calculate Stop Loss</button>
+
+<div class="result" id="result"></div>
+
+<!-- 示例说明 -->
+<div class="example-block">
+<h2>Stop Loss Calculator Example</h2>
+<p>For example, if your <strong>entry price</strong> is $100 and you are willing to risk $20 per trade, the suggested stop loss level would be:</p>
+<p><strong>Stop Loss = Entry Price - Risk Amount</strong></p>
+<p>Calculation: $100 - $20 = <strong>$80</strong></p>
+<p>This ensures that if the trade goes against you, you only lose $20.</p>
+</div>
+
+<a href="https://affiliate.link/stop-loss" class="affiliate" target="_blank">Try Premium Stop Loss Tool</a>
+
+<!-- FAQ 扩展到 10 条 -->
+<div class="faq-block">
+<h2>Instructions & FAQ</h2>
+
+<h3>1. What is a Stop Loss?</h3>
+<p>A stop loss is an order placed to limit potential losses in a trade. It helps protect your capital in volatile crypto markets.</p>
+
+<h3>2. How do I use this calculator?</h3>
+<p>Enter your entry price and risk amount. Click "Calculate" to get the suggested stop loss price. This ensures proper risk management.</p>
+
+<h3>3. Why is risk management important?</h3>
+<p>Even profitable strategies can fail if stop losses are too wide or too tight. Proper risk management keeps you in the game longer.</p>
+
+<h3>4. Can I use this for leveraged trading?</h3>
+<p>Yes, but consider the amplified risk. Always combine with the <a href="./leverage-calculator.html" title="Leverage Calculator">Leverage Calculator</a> for accurate position sizing.</p>
+
+<h3>5. Recommended stop loss distance?</h3>
+<p>Depends on asset volatility and personal risk tolerance. Avoid very tight stops on volatile crypto assets.</p>
+
+<h3>6. Can I combine with other tools?</h3>
+<p>Yes, use it with the <a href="./position-size-calculator.html">Position Size Calculator</a> and <a href="./risk-reward-calculator.html">Risk Reward Calculator</a> for complete risk planning.</p>
+
+<h3>7. Does this calculator account for trading fees?</h3>
+<p>No, fees are not included. Consider fees when calculating effective risk.</p>
+
+<h3>8. Can beginners use this tool safely?</h3>
+<p>Yes, it’s beginner-friendly, but always double-check inputs and practice on demo accounts before real trading.</p>
+
+<h3>9. How do I adjust for high volatility?</h3>
+<p>Consider increasing stop loss distance or reducing position size in volatile markets.</p>
+
+<h3>10. Is this suitable for all crypto assets?</h3>
+<p>Yes, adjust stop loss based on asset volatility and liquidity for optimal results.</p>
+
+</div>
+
+</div>
+
+<!-- JS 计算逻辑 -->
+<script>
+function calculateStopLoss(){
+  let entry = parseFloat(document.getElementById('entry').value);
+  let risk = parseFloat(document.getElementById('riskamount').value);
+  if(isNaN(entry)||isNaN(risk)){ 
+    alert('Please enter valid numbers'); 
+    return;
+  }
+  let stoploss = entry - risk;
+  document.getElementById('result').innerText = 'Suggested Stop Loss Price: $' + stoploss.toFixed(2);
+}
+</script>
+
+<!-- 底部 -->
+<footer>
+© 2026 Crypto Trading Tools · <a href="./" >Back to Home</a>
+</footer>
+
+</body>
+</html>
